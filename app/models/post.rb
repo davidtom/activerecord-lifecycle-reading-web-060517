@@ -1,8 +1,11 @@
 class Post < ActiveRecord::Base
 
-  validate :is_title_case 
-  before_validation :make_title_case 
   belongs_to :author
+  validate :is_title_case
+
+  #new code from lab reading:
+  # before_save :make_title_case
+  before_validation :make_title_case
 
   private
 
